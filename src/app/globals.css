@@ -58,3 +58,11 @@ html {
 }
 
 details summary::-webkit-details-marker { display: none; }
+
+/*
+  Announcement bar: hide instantly for dismissed visitors.
+  The inline script in layout.tsx sets data-bar="0" on <html> before first paint
+  if localStorage shows the bar was dismissed and the dismissal hasn't expired.
+  This prevents any flash or layout shift for returning dismissed visitors.
+*/
+[data-bar='0'] .wc-announcement-bar { display: none; }

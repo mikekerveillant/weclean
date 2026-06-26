@@ -3,6 +3,7 @@ import { Figtree } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import AnnouncementBar from '@/components/layout/AnnouncementBar';
 import { organizationSchema } from '@/lib/schema';
 import { SITE_URL } from '@/data/pricing';
 
@@ -37,6 +38,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
         />
+        {/*
+          Runs before first paint. If the visitor previously dismissed the bar,
+          sets data-bar="0" on <html> so the CSS rule in globals.css hides it
+          instantly — no layout shift, no flash of dismissed bar re-appearing.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var e=localStorage.getItem('wc-bar-exp');if(e&&Date.now()<+e)document.documentElement.setAttribute('data-bar','0')}catch(e){}`,
+          }}
+        />
+        <AnnouncementBar />
         <Header />
         <main>{children}</main>
         <Footer />
