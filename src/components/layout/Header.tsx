@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const NAV = [
-  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Plans & Pricing', href: '/#pricing' },
   { label: 'Services', href: '/#services' },
   { label: 'About', href: '/#about' },
   { label: 'How it works', href: '/#how-it-works' },

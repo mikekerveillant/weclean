@@ -2,16 +2,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CENTRAL_PHONE, COMMERCIAL_PHONE, EMAIL, COMMERCIAL_WHATSAPP } from '@/data/pricing';
 
-const QUICK_LINKS = [
-  { label: 'Home', href: '/' },
+const SERVICES_LINKS = [
+  { label: 'Wash, Dry & Fold', href: '/services' },
+  { label: 'Household Items', href: '/services' },
+  { label: 'Pickup & Delivery', href: '/services' },
+  { label: 'Dry Cleaning', href: '/services' },
+  { label: 'UltraSonic Sneaker Cleaning', href: '/services' },
+  { label: 'Commercial Laundry', href: '/services' },
+];
+
+const COMPANY_LINKS = [
   { label: 'About Us', href: '/about-us' },
-  { label: 'Services', href: '/services' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Branches', href: '/branches' },
-  { label: 'Membership', href: '/membership' },
-  { label: 'Referral Program', href: '/referral' },
+  { label: 'Locations', href: '/branches' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/#faq' },
+];
+
+const REWARDS_LINKS = [
+  { label: 'Plans & Pricing', href: '/pricing' },
+  { label: 'Membership Plans', href: '/pricing#membership' },
+  { label: 'Referral Program', href: '/referral' },
 ];
 
 export default function Footer() {
@@ -20,9 +31,26 @@ export default function Footer() {
 
   return (
     <footer className="bg-brand-950 text-brand-200">
+      {/* Referral banner */}
+      <div className="bg-brand-800 border-b border-brand-700">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-2 text-sm">
+          <span className="text-brand-300">
+            Refer a friend and you both get rewarded —
+          </span>
+          <Link
+            href="/referral"
+            className="text-white font-semibold hover:text-brand-300 transition-colors whitespace-nowrap"
+          >
+            Learn more →
+          </Link>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Brand */}
+        {/* Main grid: brand + 4 columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 lg:gap-16">
+
+          {/* Brand block */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2.5 mb-3" aria-label="WeClean home">
               <Image
@@ -34,7 +62,7 @@ export default function Footer() {
               />
               <span className="text-white font-bold text-lg tracking-tight">weclean</span>
             </Link>
-            <p className="text-sm leading-relaxed text-brand-300 mb-4">
+            <p className="text-sm leading-relaxed text-brand-300 mb-5">
               Big on Quality. WeClean for Less.<br />
               Trusted laundry care across the Philippines since 2017.
             </p>
@@ -75,53 +103,84 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links */}
-          <div>
-            <p className="text-white font-semibold text-sm mb-4">Quick Links</p>
-            <ul className="space-y-2">
-              {QUICK_LINKS.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-sm text-brand-300 hover:text-white transition-colors"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* 4-column link grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {/* Contact */}
-          <div>
-            <p className="text-white font-semibold text-sm mb-4">Get in Touch</p>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a href={`tel:${CENTRAL_PHONE.replace(/\s/g, '')}`} className="text-brand-300 hover:text-white transition-colors">
-                  {CENTRAL_PHONE}
-                </a>
-                <span className="text-brand-500 ml-2 text-xs">General booking</span>
-              </li>
-              <li>
-                <a
-                  href={commercialWaLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-300 hover:text-white transition-colors"
-                >
-                  WhatsApp: {COMMERCIAL_PHONE}
-                </a>
-                <span className="text-brand-500 ml-2 text-xs">Commercial</span>
-              </li>
-              <li>
-                <a href={`mailto:${EMAIL}`} className="text-brand-300 hover:text-white transition-colors">
-                  {EMAIL}
-                </a>
-              </li>
-              <li className="text-brand-400">
-                Every day · Mon–Sat 8 AM–8 PM · Sun 9 AM–6 PM
-              </li>
-            </ul>
+            {/* Services */}
+            <div>
+              <p className="text-white font-semibold text-sm mb-4">Services</p>
+              <ul className="space-y-2.5">
+                {SERVICES_LINKS.map((l) => (
+                  <li key={l.label}>
+                    <Link href={l.href} className="text-sm text-brand-300 hover:text-white transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <p className="text-white font-semibold text-sm mb-4">Company</p>
+              <ul className="space-y-2.5">
+                {COMPANY_LINKS.map((l) => (
+                  <li key={l.label}>
+                    <Link href={l.href} className="text-sm text-brand-300 hover:text-white transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Membership & Rewards */}
+            <div>
+              <p className="text-white font-semibold text-sm mb-4">Membership & Rewards</p>
+              <ul className="space-y-2.5">
+                {REWARDS_LINKS.map((l) => (
+                  <li key={l.label}>
+                    <Link href={l.href} className="text-sm text-brand-300 hover:text-white transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Get in Touch */}
+            <div>
+              <p className="text-white font-semibold text-sm mb-4">Get in Touch</p>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <a href={`tel:${CENTRAL_PHONE.replace(/\s/g, '')}`} className="text-brand-300 hover:text-white transition-colors">
+                    {CENTRAL_PHONE}
+                  </a>
+                  <span className="block text-brand-500 text-xs mt-0.5">General booking</span>
+                </li>
+                <li>
+                  <a
+                    href={commercialWaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-300 hover:text-white transition-colors"
+                  >
+                    WhatsApp: {COMMERCIAL_PHONE}
+                  </a>
+                  <span className="block text-brand-500 text-xs mt-0.5">Commercial enquiries</span>
+                </li>
+                <li>
+                  <a href={`mailto:${EMAIL}`} className="text-brand-300 hover:text-white transition-colors">
+                    {EMAIL}
+                  </a>
+                </li>
+                <li className="text-brand-400 leading-relaxed">
+                  Mon–Sat 8 AM–8 PM<br />
+                  Sun 9 AM–6 PM
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
 

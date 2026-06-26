@@ -170,11 +170,18 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className="text-center mt-4">
-            <Link href="/pricing" className="text-sm text-brand-600 hover:text-brand-800 font-medium">
-              View full pricing →
-            </Link>
-          </p>
+          <div className="text-center mt-4 space-y-2">
+            <p>
+              <Link href="/pricing" className="text-sm text-brand-600 hover:text-brand-800 font-medium">
+                View full pricing →
+              </Link>
+            </p>
+            <p>
+              <Link href="/pricing#membership" className="text-xs text-gray-500 hover:text-brand-700 transition-colors">
+                Also available: monthly membership plans — save more →
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
 

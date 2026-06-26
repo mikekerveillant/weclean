@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
       { source: '/our-services/:path*', destination: '/services/:path*', permanent: true },
       { source: '/branches/', destination: '/branches', permanent: true },
       { source: '/services/', destination: '/services', permanent: true },
+      { source: '/membership', destination: '/pricing#membership', permanent: true },
+      { source: '/membership/', destination: '/pricing#membership', permanent: true },
     ];
   },
 

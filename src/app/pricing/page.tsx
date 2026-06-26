@@ -3,14 +3,66 @@ import Link from 'next/link';
 import { pricing, supplies, specialtyPricingNote, COMMERCIAL_WHATSAPP, GENERAL_WHATSAPP, SITE_URL } from '@/data/pricing';
 
 export const metadata: Metadata = {
-  title: 'Laundry Pricing | WeClean Philippines',
+  title: 'Plans & Pricing | WeClean Philippines',
   description:
-    'WeClean laundry pricing: Self-service wash ₱60 / dry ₱70 (7kg). Full service ₱165/load. Household items ₱170/load. Pickup & delivery FREE. Rush same-day 2× rate.',
+    'WeClean laundry pricing: Self-service wash ₱60 / dry ₱70 (7kg). Full service ₱165/load. Pickup & delivery FREE. Rush same-day 2×. Monthly membership plans coming soon.',
   alternates: { canonical: `${SITE_URL}/pricing` },
 };
 
 const generalLink = `https://wa.me/${GENERAL_WHATSAPP}?text=${encodeURIComponent("Hi WeClean! I have a question about pricing.")}`;
 const commercialLink = `https://wa.me/${COMMERCIAL_WHATSAPP}?text=${encodeURIComponent("Hi WeClean! I'd like a quote for commercial laundry services.")}`;
+const membershipInquiryLink = `https://wa.me/${GENERAL_WHATSAPP}?text=${encodeURIComponent("Hi WeClean! I'm interested in your membership plans.")}`;
+
+const PLANS = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    tagline: 'For singles and students',
+    kgPerMonth: 20,
+    pickupsPerMonth: 4,
+    perks: [
+      '20 kg laundry per month',
+      '4 scheduled pickups',
+      'Priority booking slots',
+      'Free delivery within zone',
+    ],
+    cta: 'Get Starter Plan',
+    highlight: false,
+  },
+  {
+    id: 'family',
+    name: 'Family',
+    tagline: 'For households of 2–4',
+    kgPerMonth: 40,
+    pickupsPerMonth: 8,
+    perks: [
+      '40 kg laundry per month',
+      '8 scheduled pickups',
+      'Priority booking slots',
+      'Free delivery within zone',
+      'Household items included',
+    ],
+    cta: 'Get Family Plan',
+    highlight: true,
+  },
+  {
+    id: 'household',
+    name: 'Household Plus',
+    tagline: 'For large families or shared units',
+    kgPerMonth: 70,
+    pickupsPerMonth: 12,
+    perks: [
+      '70 kg laundry per month',
+      '12 scheduled pickups',
+      'Priority booking slots',
+      'Free delivery within zone',
+      'Household items included',
+      'Dedicated account support',
+    ],
+    cta: 'Get Household Plan',
+    highlight: false,
+  },
+];
 
 export default function PricingPage() {
   return (
@@ -88,6 +140,71 @@ export default function PricingPage() {
             </div>
             <div className="px-6 py-4 bg-brand-800/40 text-xs text-brand-400">
               Rush (same-day) service is 2× the standard per-load rate. Availability may vary by branch.
+            </div>
+          </div>
+
+          {/* ── Membership plans ───────────────────────────────────────────── */}
+          <div id="membership" className="mb-10 scroll-mt-24">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <p className="text-xs font-semibold text-brand-600 uppercase tracking-widest mb-1">Monthly plans</p>
+                <h2 className="text-lg font-bold text-brand-900">Monthly Membership</h2>
+                <p className="text-gray-500 text-sm mt-0.5">Doing laundry every week? Save with a monthly plan instead of paying per load.</p>
+              </div>
+              <span className="inline-flex items-center bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full shrink-0">
+                Coming Soon — Join the waitlist
+              </span>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 text-sm text-amber-800">
+              <strong>Note:</strong> Monthly pricing is being finalized. The structure and inclusions below represent the planned offering.{' '}
+              <a href={membershipInquiryLink} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-amber-900">
+                Message us on WhatsApp to join the waitlist.
+              </a>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {PLANS.map((plan) => (
+                <div
+                  key={plan.id}
+                  className={`rounded-2xl p-6 border-2 ${
+                    plan.highlight ? 'border-brand-600 bg-brand-50' : 'border-gray-100 bg-white'
+                  }`}
+                >
+                  {plan.highlight && (
+                    <span className="inline-block bg-brand-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                      Most Popular
+                    </span>
+                  )}
+                  <h3 className="text-xl font-bold text-brand-900">{plan.name}</h3>
+                  <p className="text-gray-500 text-sm mb-4">{plan.tagline}</p>
+                  <div className="mb-4">
+                    <p className="text-brand-600 font-semibold text-sm">Price TBD — inquire via WhatsApp</p>
+                  </div>
+                  <ul className="space-y-2 mb-6">
+                    {plan.perks.map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-sm text-gray-600">
+                        <svg className="w-4 h-4 text-brand-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={membershipInquiryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block text-center rounded-full font-semibold py-2.5 text-sm transition-colors ${
+                      plan.highlight
+                        ? 'bg-brand-700 text-white hover:bg-brand-800'
+                        : 'border border-brand-300 text-brand-700 hover:bg-brand-50'
+                    }`}
+                  >
+                    {plan.cta}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
 

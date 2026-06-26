@@ -1,7 +1,7 @@
 export interface BlogPost {
   slug: string;
   area: string;
-  type: 'guide' | 'same-day';
+  type: 'guide' | 'same-day' | 'informational' | 'sneaker';
   title: string;
   metaDescription: string;
   nearbyBranchSlugs: string[];
@@ -892,6 +892,567 @@ export const blogPosts: BlogPost[] = [
       { q: 'Is same-day laundry available in Siargao?', a: 'Yes. WeClean on Libertad Street, General Luna offers rush same-day service. Drop off before noon or request pickup before 10AM on WhatsApp.' },
       { q: 'What\'s the rush rate in Siargao?', a: '₱330 per load (2×). Free pickup.' },
       { q: 'Can WeClean pick up from my guesthouse in General Luna?', a: 'Yes — message us your guesthouse name or address on WhatsApp and we\'ll arrange pickup.' },
+    ],
+  },
+
+  // ─── INFORMATIONAL ────────────────────────────────────────────────────────
+  {
+    slug: 'per-kilo-vs-per-load-laundry',
+    area: 'Philippines',
+    type: 'informational',
+    title: 'Per Kilo vs Per Load Laundry: Which Is Better for Your Clothes?',
+    metaDescription: 'Understand the difference between per-kilo and per-load laundry pricing in the Philippines — and why per-load is usually better for fabric care.',
+    nearbyBranchSlugs: ['dian', 'sto-tomas', 'pandacan'],
+    intro: "When you ask about laundry pricing at a shop in the Philippines, you'll get one of two answers: per kilo or per load. Most people assume per-kilo is cheaper and per-load is premium. That's often true on price — but the more important difference is in how your clothes are actually washed.",
+    sections: [
+      {
+        heading: 'What Per-Kilo Laundry Means',
+        paragraphs: [
+          "Per-kilo pricing charges you based on the weight of your laundry, typically ₱50–80 per kilogram depending on the area. You pay for how heavy the bag is, not how many machine cycles are used.",
+          "The issue isn't the pricing model itself — it's what per-kilo incentivizes. When a shop earns the same per kilogram regardless of how laundry is processed, the efficient move is to fill machines as full as possible. A 10–12kg drum might get loaded with clothes from three or four customers at once to maximize throughput. Heavily loaded machines wash less effectively: clothes don't tumble freely, water circulation is restricted, and detergent doesn't distribute evenly. Your white shirt comes back with a grey tint. Your gym clothes still smell.",
+        ],
+      },
+      {
+        heading: 'What Per-Load Laundry Means',
+        paragraphs: [
+          "Per-load pricing charges a fixed rate for each washing machine cycle, with a maximum weight cap. At WeClean, that's 5kg for a regular clothes load (₱165) and 4kg for household items (₱170). You're paying for the cycle, not the weight.",
+          "The cap matters. When a shop caps load weight, machines run at the right fill level — clothes tumble properly, water circulates, detergent distributes evenly. The result is a more thorough clean. Weight caps also mean each customer's clothes are processed separately, which prevents colour bleeding and scent transfer between orders.",
+        ],
+      },
+      {
+        heading: 'Which Is Actually Better?',
+        paragraphs: [
+          "For everyday clothes you don't care much about, per-kilo can be fine — it's usually cheaper and fast. For anything you want to last — work wear, school uniforms, white garments, anything with colour you want to preserve — per-load is the better choice.",
+          "The real question to ask any laundry shop isn't how they price, it's this: 'Is my laundry washed in its own machine cycle, or mixed with other customers?' That's the question that tells you how your clothes will actually be treated.",
+        ],
+      },
+      {
+        heading: "WeClean's Approach",
+        paragraphs: [
+          "WeClean uses per-load pricing with strict weight caps: 5kg per load for regular clothes, 4kg for household items. Every order is processed in its own machine cycle — your clothes are never mixed with another customer's laundry.",
+          "This isn't just about quality signaling. Dye transfer is real. Scent transfer is real. A black garment run at high temperature alongside a white one will damage both. Order separation prevents all of this.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Is per-kilo or per-load laundry cheaper in the Philippines?', a: "Per-kilo is usually cheaper per kilogram. WeClean's per-load rate is ₱165 per 5kg load — roughly ₱33/kg — which is competitive with most per-kilo shops while guaranteeing individual order processing." },
+      { q: 'Does WeClean charge per kilo or per load?', a: 'Per load. ₱165 for a 5kg regular clothes load, ₱170 for a 4kg household items load. Each load is processed in its own machine cycle, not mixed with other orders.' },
+      { q: 'Why do per-kilo shops overload machines?', a: 'Per-kilo pricing creates an incentive to fill machines completely — more kilograms processed per cycle means more revenue per hour. Per-load pricing with a weight cap removes that incentive entirely.' },
+      { q: 'Does load weight actually affect wash quality?', a: 'Yes. An overloaded machine restricts how much clothes can move during the cycle, limiting how well detergent and water penetrate fabrics. Most manufacturers recommend filling machines to 80% capacity or less.' },
+    ],
+  },
+  {
+    slug: 'how-to-wash-comforters',
+    area: 'Philippines',
+    type: 'informational',
+    title: 'How to Wash a Comforter Without Ruining It',
+    metaDescription: 'A practical guide to washing comforters in the Philippines — what to check on the label, the right machine settings, and why the drying step matters most.',
+    nearbyBranchSlugs: ['dian', 'harrison', 'pandacan'],
+    intro: "A comforter is one of those items that most households wash infrequently, partly because it's bulky and partly because people are afraid of ruining it. The fear is warranted — a comforter that's washed incorrectly or not dried thoroughly can come back misshapen, clumped, or worse: mouldy. Here's how to do it right, whether you're washing at home or using a laundry service.",
+    sections: [
+      {
+        heading: 'Read the Label First',
+        paragraphs: [
+          "The care label on your comforter tells you what it can tolerate. The most important things to look for: the maximum wash temperature, whether it's dry-clean-only, and the fill material (polyester, cotton, down, or synthetic).",
+          "Down and feather-fill comforters require the most care — they need to be washed at low temperature, not wrung out, and dried at low heat for a very long time. Polyester-fill comforters are more forgiving and can handle a normal warm wash cycle. If the label says dry clean only, take it to a shop — attempting to machine wash a dry-clean-only comforter is how you end up with something unrecognisable.",
+        ],
+      },
+      {
+        heading: 'The Machine Requirements',
+        paragraphs: [
+          "Comforters need space to move in the drum. A standard household washing machine (6–7kg capacity) can handle a single-bed or queen-sized comforter — barely. A king-sized comforter almost always needs a large-capacity machine, typically the kind found at commercial laundry shops rather than home use.",
+          "If you force a comforter into a machine that's too small, the filling bunches in the corners, the fabric strains, and the wash cycle can't circulate water and detergent evenly. The result is a partially clean comforter with clumped filling.",
+        ],
+      },
+      {
+        heading: 'Washing: What to Use and Avoid',
+        paragraphs: [
+          "Use a mild detergent — not too much. Comforters trap detergent in the filling, and if it doesn't rinse out fully, it attracts dirt faster and can irritate skin. Choose a detergent without fabric softener built in; softener coats down and synthetic fills and reduces loft over time.",
+          "Run an extra rinse cycle if your machine has one. For down fills especially, getting all the soap out matters. Wash with a cold or warm cycle (never hot unless the label says otherwise) and the gentlest spin cycle your machine offers — aggressive spinning can damage the seams.",
+        ],
+      },
+      {
+        heading: 'Drying: The Step Most People Get Wrong',
+        paragraphs: [
+          "Drying is where comforter washing usually goes wrong. A comforter that feels dry on the outside can still hold moisture in the fill — and that moisture becomes mould and mildew within a day or two if it's put away before fully dry.",
+          "In a dryer: use low heat and add two or three dryer balls (or clean tennis balls) to the drum. They break up clumping as the comforter tumbles. A full drying cycle for a queen comforter at low heat takes 2–3 hours, sometimes more. Stop the dryer every 30 minutes and pull out the comforter to redistribute the fill manually.",
+          "Line or flat drying works, but takes much longer — a full day in good sunlight, ideally more. Flip it midway. Don't pack it away until it's completely dry through to the centre.",
+        ],
+      },
+      {
+        heading: 'When to Use a Laundry Shop',
+        paragraphs: [
+          "If you don't have a large-capacity machine, if the label says dry clean only, or if your comforter is filled with down, taking it to a laundry shop is the right call. A commercial machine with the proper capacity will wash it more effectively than most household machines, and a shop with proper drying equipment will get it fully dry without the clumping risk.",
+          "WeClean's household items service covers comforters and bulky bedding at ₱170 per load (max 4kg). If your comforter is over 4kg, it may require two loads — we'll confirm when you bring it in or during a pickup arrangement.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Can I wash a comforter in a regular home washing machine?', a: 'Single or queen-sized comforters can fit in most 6–7kg machines, but they need room to move. King-sized comforters usually require a commercial machine. If the drum is too full, the wash won\'t be effective.' },
+      { q: 'How long does it take to dry a comforter?', a: 'In a dryer at low heat: 2–3 hours, sometimes longer. Line drying: a full day in direct sunlight, minimum. The fill must be completely dry before storing — trapped moisture causes mould.' },
+      { q: 'Can WeClean wash comforters?', a: 'Yes. Comforters and bulky household items are ₱170 per load (max 4kg). Pickup and delivery is free. Message us on WhatsApp to arrange.' },
+      { q: 'How often should a comforter be washed?', a: 'Every 3–6 months for a comforter used inside a duvet cover. Every 1–2 months if used without a cover. More often in humid climates like the Philippines where sweat accumulation is higher.' },
+    ],
+  },
+  {
+    slug: 'dry-cleaning-vs-regular-washing',
+    area: 'Philippines',
+    type: 'informational',
+    title: 'Dry Cleaning vs Regular Washing: When to Use Which',
+    metaDescription: 'Not sure when to dry clean vs machine wash your clothes? This guide explains what dry cleaning actually does and which fabrics and garments need it.',
+    nearbyBranchSlugs: ['dian', 'pandacan', 'balagtas'],
+    intro: "Most people know that dry cleaning exists for clothes that can't go in the washing machine. But the reasoning behind it — what dry cleaning actually does to fabric, and why some garments need it — is less commonly understood. Knowing when to dry clean and when to machine wash saves money and makes your clothes last longer.",
+    sections: [
+      {
+        heading: 'What Dry Cleaning Actually Is',
+        paragraphs: [
+          "Despite the name, dry cleaning isn't completely dry. It uses a liquid solvent — traditionally perchloroethylene (perc), though many modern shops use greener alternatives — instead of water. The solvent dissolves oils, grease, and many organic stains without water getting into the fabric structure.",
+          "Why does that matter? Water causes fabric fibres to swell, shrink, or warp — particularly for wool, silk, rayon, and structured garments where shape is maintained by internal interfacing. A wool blazer or a silk dress run through a regular wash cycle can come out a different size and shape. Dry cleaning avoids this entirely.",
+        ],
+      },
+      {
+        heading: 'Which Garments Need Dry Cleaning',
+        paragraphs: [
+          "Structured garments: suits, blazers, sports jackets, dress trousers, formal gowns. The internal structure (canvas, padding, interfacing) that gives them their shape is damaged by water washing.",
+          "Delicate fabrics: silk, wool, cashmere, rayon, velvet, and some acetates. These fibres can shrink dramatically, lose texture, or felt when exposed to water and agitation.",
+          "Embellished pieces: anything with beading, embroidery, or delicate trim that can't survive a wash cycle mechanically intact.",
+          "If the care label says 'dry clean only' or shows a circle symbol with no water symbols — dry clean it. If the label says 'dry clean recommended' but not required, you may be able to hand wash very gently, but dry cleaning is the safer choice.",
+        ],
+      },
+      {
+        heading: 'When Regular Washing Is Fine',
+        paragraphs: [
+          "Cotton, linen, most synthetics (polyester, nylon, spandex), denim, and knit fabrics generally handle regular machine washing well. These fibres don't have the same structural sensitivity as wool or silk and don't lose their shape the way tailored garments do.",
+          "Most everyday clothing — T-shirts, jeans, underwear, gym wear, casual dresses, bedding — can and should be machine washed. Dry cleaning these items is expensive and unnecessary, and repeated solvent exposure can actually dull some synthetic fibres over time.",
+        ],
+      },
+      {
+        heading: 'Dry Cleaning in the Philippines',
+        paragraphs: [
+          "Dry cleaning availability in Metro Manila varies significantly by neighbourhood. Not all laundry shops offer it — many that advertise dry cleaning actually outsource it to a third-party, which adds time and reduces accountability for garment condition.",
+          "WeClean's Dian Branch in Makati handles dry cleaning in-house. It's also available via pickup and delivery for customers across Metro Manila who can't make a trip to Makati. Pricing varies by garment — message us on WhatsApp for a quote before bringing items in.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Can I wash a dry-clean-only garment at home?', a: "If the label says 'dry clean only,' do not machine wash it. Some dry-clean-only items can be gently hand washed in cold water with mild soap — but the risk of shrinkage, shape loss, or fabric damage is real. When in doubt, dry clean." },
+      { q: 'Is dry cleaning available at all WeClean branches?', a: 'Dry cleaning is available at most WeClean branches and via pickup and delivery across Metro Manila. The Dian Branch in Makati is the main dry cleaning hub. Message us on WhatsApp to confirm availability and pricing for your items.' },
+      { q: 'How much does dry cleaning cost in Manila?', a: 'Pricing varies by garment type and condition. WeClean prices dry cleaning per item — message us on WhatsApp or bring items to the Dian Branch for an assessment.' },
+      { q: 'How long does dry cleaning take?', a: 'Typically 24–48 hours for most garments at WeClean. Rush turnaround may be available for certain items — confirm on WhatsApp.' },
+    ],
+  },
+  {
+    slug: 'how-to-remove-laundry-stains',
+    area: 'Philippines',
+    type: 'informational',
+    title: 'How to Remove Common Laundry Stains Before Your Next Wash',
+    metaDescription: 'A practical guide to treating common stains on clothes before washing — food, sweat, ink, and blood — and when to let the professionals handle it.',
+    nearbyBranchSlugs: ['dian', 'sto-tomas', 'shorthorn'],
+    intro: "Acting quickly on a stain is the single most effective thing you can do before the laundry gets done. A stain that's been sitting for a day is harder to remove than one that's fresh. But acting quickly also means acting correctly — the wrong treatment can set a stain permanently. Here's what actually works on the most common types.",
+    sections: [
+      {
+        heading: 'The First Rule: Cold Water, Not Hot',
+        paragraphs: [
+          "Hot water sets protein-based stains — blood, sweat, eggs, dairy. If you immediately rinse a blood stain under cold water, you're diluting and removing it. If you rinse it under hot water, you're cooking it into the fabric.",
+          "The same applies to the wash cycle: if a stain isn't fully out before washing, keep the water temperature cold. Once a stain has been through a hot wash, it's very difficult to remove.",
+        ],
+      },
+      {
+        heading: 'Food and Beverage Stains',
+        paragraphs: [
+          "For oil-based stains (cooking oil, butter, salad dressing): blot the excess with a paper towel immediately — don't rub, which spreads it. Apply a small amount of dish soap or liquid detergent directly to the stain, work it in gently, let it sit for 5–10 minutes, then rinse with cold water before washing.",
+          "For coffee, juice, or sauce: flush with cold water immediately to dilute. Apply a stain remover or liquid detergent, let it sit, then wash. Red wine responds well to club soda or cold water immediately after spilling, before it dries.",
+        ],
+      },
+      {
+        heading: 'Sweat and Deodorant Stains',
+        paragraphs: [
+          "Yellow underarm stains are caused by a reaction between sweat and aluminium in antiperspirants, not by the sweat alone. They're stubborn because they've usually been set by multiple wash cycles before being addressed.",
+          "A paste of baking soda and water worked into the stain and left for 30 minutes before washing can help with fresh stains. For older yellowing, a soak in a mixture of white vinegar and water (1:2 ratio) for an hour before washing tends to lift them. Don't use bleach on yellowing — it can make the oxidation worse on synthetic fibres.",
+        ],
+      },
+      {
+        heading: 'Ink Stains',
+        paragraphs: [
+          "Ballpoint ink: rubbing alcohol (70% isopropyl) applied to a cotton ball, dabbed onto the stain. Work from the outside in to avoid spreading. Rinse, then wash. It won't always remove entirely, but lifts most of the ink.",
+          "Permanent marker: considerably harder. Alcohol still helps but may not remove it fully. Acetone (nail polish remover) works on some fabrics but damages others — test on a hidden seam first.",
+        ],
+      },
+      {
+        heading: 'Blood Stains',
+        paragraphs: [
+          "Cold water, immediately. Soak the stained area in cold water for as long as possible — the sooner, the better. Hydrogen peroxide (3%) applied to dried blood stains on white or light fabrics will fizz and lift the stain. Don't use on dark fabrics — it will bleach them.",
+          "Once you've pre-treated with cold water and let it sit, wash on a cold cycle. Do not put blood-stained fabric through a hot dryer until the stain is fully gone.",
+        ],
+      },
+      {
+        heading: 'When to Take It to a Laundry Shop',
+        paragraphs: [
+          "Some stains are beyond home treatment: old set stains, dye transfer between garments, chemical or industrial stains, or any stain on a delicate fabric you can't risk treating aggressively. A professional laundry shop with proper stain treatment chemicals can often recover garments that seem past saving.",
+          "When dropping off stained clothes at WeClean, point out the specific stain and what caused it. This helps staff apply the right pre-treatment. Don't assume the shop will notice — call it out explicitly.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'What is the fastest way to remove a fresh stain?', a: 'Act immediately. Blot (don\'t rub) the excess, flush with cold water, and apply liquid detergent or dish soap directly. Cold water prevents protein stains from setting.' },
+      { q: 'Can WeClean treat stains professionally?', a: 'Yes. When dropping off, tell staff what caused the stain. Professional pre-treatment is available for most stain types. Severe or set stains may not be fully recoverable but we\'ll advise before processing.' },
+      { q: 'Does hot water set stains?', a: 'Yes — especially protein-based stains (blood, sweat, egg). Always use cold water on a stain first. A hot wash cycle on an untreated stain can set it permanently into the fabric.' },
+      { q: 'How do I remove old yellow underarm stains?', a: 'Soak in a 1:2 mix of white vinegar and water for an hour before washing. Baking soda paste (left for 30 minutes) also helps. Avoid bleach — it can worsen oxidation stains on synthetic fibres.' },
+    ],
+  },
+
+  // ─── SNEAKER CARE ─────────────────────────────────────────────────────────
+  {
+    slug: 'ultrasonic-sneaker-cleaning-explained',
+    area: 'Philippines',
+    type: 'sneaker',
+    title: 'UltraSonic Sneaker Cleaning: What It Is and Why It Works Better',
+    metaDescription: 'UltraSonic sneaker cleaning uses high-frequency sound waves to remove dirt from sneakers without harsh brushing. Here\'s how it works and why it\'s better for premium footwear.',
+    nearbyBranchSlugs: ['dian'],
+    intro: "If you've been looking into sneaker cleaning services, you've probably come across ultrasonic cleaning without a clear explanation of what it actually does. The name sounds technical, but the principle is straightforward — and the reason it's better for premium footwear than manual brushing or steam cleaning is real.",
+    sections: [
+      {
+        heading: 'What Ultrasonic Cleaning Actually Does',
+        paragraphs: [
+          "Ultrasonic cleaning uses high-frequency sound waves (typically 20,000–40,000 Hz) transmitted through a liquid bath. These sound waves create millions of tiny bubbles through a process called cavitation — the bubbles form and collapse rapidly, producing microscopic implosions against the surface being cleaned.",
+          "Those implosions are powerful enough to dislodge dirt, grime, and oxidation from the micro-crevices of a shoe's surface — areas that a brush or cloth can't reach — without any mechanical scrubbing. The result is a deeper clean with no brush abrasion on the material.",
+        ],
+      },
+      {
+        heading: 'Why Brushing Falls Short',
+        paragraphs: [
+          "Manual brushing is the standard sneaker cleaning method — effective for surface dirt on robust materials, but it has limits. Stiff bristles abrade mesh and knit uppers over time. Brush pressure can push dirt deeper into porous surfaces rather than lifting it. And brushing can't clean the micro-textured areas of midsoles, lace loops, and shoe walls where grime accumulates.",
+          "For everyday rubber-soled trainers, brushing is fine. For premium materials — Boost foam, Flyknit, suede, leather panels, or collaborative colourways — the abrasion risk matters more.",
+        ],
+      },
+      {
+        heading: 'What Ultrasonic Cleaning Is Safe For',
+        paragraphs: [
+          "Ultrasonic cleaning works well on most sneaker materials: rubber outsoles and midsoles, EVA foam, canvas, mesh, leather, and most synthetic uppers. The cavitation process is particularly effective on midsoles where yellowing and oxidation accumulate.",
+          "Ultrasonic cleaning is not suitable for all materials — extremely delicate leathers or suedes may need hand treatment instead. At WeClean, every pair is assessed before cleaning to determine the right method for the specific materials.",
+        ],
+      },
+      {
+        heading: 'Ultrasonic Sneaker Cleaning at WeClean',
+        paragraphs: [
+          "WeClean offers UltraSonic sneaker cleaning at the Dian Branch in Makati. It's available as a walk-in service or via free pickup and delivery across Metro Manila. Pricing varies by pair and condition — message us on WhatsApp with photos for a quote.",
+          "The service includes pre-cleaning assessment, ultrasonic bath cleaning, and finishing. Turnaround is typically 24–48 hours depending on condition and volume.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Is ultrasonic sneaker cleaning safe for all sneakers?', a: 'It\'s suitable for most sneakers including leather, mesh, canvas, and rubber. Very delicate materials like uncoated suede may need hand treatment instead. WeClean assesses each pair before cleaning.' },
+      { q: 'How much does ultrasonic sneaker cleaning cost at WeClean?', a: 'Pricing varies by pair and condition. Message us on WhatsApp with photos for a quote.' },
+      { q: 'Where can I get ultrasonic sneaker cleaning in Manila?', a: 'WeClean\'s Dian Branch in Makati offers ultrasonic sneaker cleaning as walk-in or pickup service. Free pickup and delivery is available across Metro Manila.' },
+      { q: 'How long does ultrasonic sneaker cleaning take?', a: 'Typically 24–48 hours depending on the pair and current volume. Rush turnaround may be available — confirm on WhatsApp.' },
+      { q: 'Can ultrasonic cleaning remove yellowing from midsoles?', a: 'Yes. Ultrasonic cleaning is particularly effective on midsole oxidation and yellowing. Results vary by how severe the yellowing is and the specific foam material.' },
+    ],
+  },
+  {
+    slug: 'how-to-clean-white-sneakers',
+    area: 'Philippines',
+    type: 'sneaker',
+    title: 'How to Clean White Sneakers Without Ruining Them',
+    metaDescription: 'White sneakers require careful cleaning to avoid yellowing, sole damage, and fabric wear. Here\'s the right method — and the mistakes to avoid.',
+    nearbyBranchSlugs: ['dian'],
+    intro: "White sneakers look great for about two days before the reality of Manila sidewalks sets in. The challenge isn't just cleaning them — it's cleaning them without causing new damage: sole yellowing from bleach, mesh damage from stiff brushes, or shape loss from soaking. Here's what actually works and what to avoid.",
+    sections: [
+      {
+        heading: 'The Washing Machine: Why It Often Makes Things Worse',
+        paragraphs: [
+          "Throwing sneakers in the washing machine works for some types — solid rubber-soled canvas or synthetic trainers without delicate uppers. For most quality white sneakers, machine washing causes more problems than it solves: the agitation loosens glue at the sole joins, the spin cycle distorts shape, and drying after machine washing causes foam midsoles to yellow as heat and moisture interact with the EVA.",
+          "If you do machine wash sneakers, use a cold cycle (not hot), remove the laces and insoles first, and put the shoes inside a mesh laundry bag or pillowcase. Never put them in the dryer — air dry only, away from direct sunlight.",
+        ],
+      },
+      {
+        heading: 'Hand Cleaning: The Better Method',
+        paragraphs: [
+          "Remove laces and insoles. Knock off loose dirt with a soft brush or dry cloth first. Mix a small amount of mild laundry detergent or dish soap in cool water.",
+          "Use a soft-bristled brush (an old toothbrush works for detail areas) or a microfibre cloth. Work in circular motions on the upper, then scrub the midsole and outsole more firmly. For stubborn midsole marks, a small amount of baking soda paste (baking soda + water) applied with a toothbrush and left for a few minutes works well.",
+          "Rinse with a damp cloth — don't soak the shoe in water. Stuff the shoe with paper towels or newspaper to hold its shape while drying. Air dry in a shaded area, not in direct sunlight.",
+        ],
+      },
+      {
+        heading: 'Bleach: The White Sneaker Trap',
+        paragraphs: [
+          "Bleach seems logical for white shoes — it's what makes white things whiter. But on sneakers, bleach interacts with rubber and EVA foam to cause yellowing when exposed to UV light. Bleach-cleaned midsoles often look clean immediately and then turn yellow within a day or two of outdoor use.",
+          "If you need to whiten very dirty rubber areas, a small amount of hydrogen peroxide (3%) diluted in water, applied and left out of direct sunlight, is safer than bleach. But for regular maintenance cleaning, mild soap and water is the right tool.",
+        ],
+      },
+      {
+        heading: 'Cleaning Specific Materials',
+        paragraphs: [
+          "Canvas (Chuck Taylors, Vans): handles more aggressive brushing. Can be spot-washed with soapy water and a firm brush. Laces can be soaked in soapy water.",
+          "Leather and smooth synthetic: use a soft cloth, not a brush. Leather cleaner or mild soap with a damp cloth. Condition leather after cleaning to prevent cracking.",
+          "Knit and mesh (Nike Flyknit, Adidas Primeknit): most delicate. Use a very soft brush or cloth only. Avoid soaking — knit absorbs water and takes a long time to dry completely. This is where professional ultrasonic cleaning offers a real advantage.",
+        ],
+      },
+      {
+        heading: 'When to Go Professional',
+        paragraphs: [
+          "If your white sneakers have deep oxidation staining, heavy midsole yellowing, or are made from premium materials you don't want to risk — professional cleaning is worth it. WeClean's UltraSonic sneaker cleaning service at the Dian Branch handles these cases properly, with the right equipment for each material type.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Can you machine wash white sneakers?', a: 'It depends on the material. Rubber-soled canvas shoes can usually handle a cold machine wash. For leather, knit, or any premium sneaker, hand cleaning or professional cleaning is safer.' },
+      { q: 'Why do white sneakers turn yellow after cleaning?', a: 'Usually caused by bleach reacting with rubber or foam under UV light, or by incomplete rinsing leaving detergent residue that oxidises. Use mild soap, rinse thoroughly, and air dry away from direct sunlight.' },
+      { q: 'What\'s the best product to clean white sneaker soles?', a: 'Mild dish soap or laundry detergent with a firm brush works for most rubber outsoles. Baking soda paste is effective on stubborn midsole marks. Avoid bleach.' },
+      { q: 'Can WeClean clean white sneakers?', a: 'Yes. UltraSonic sneaker cleaning is available at the WeClean Dian Branch in Makati, with free pickup and delivery across Metro Manila. Message us with photos for a quote.' },
+    ],
+  },
+  {
+    slug: 'sneaker-cleaning-service-makati',
+    area: 'Makati',
+    type: 'sneaker',
+    title: 'Sneaker Cleaning Service in Makati: What to Expect',
+    metaDescription: 'Looking for sneaker cleaning in Makati? WeClean\'s Dian Branch offers UltraSonic sneaker cleaning for all types of sneakers — walk-in or free pickup across Makati.',
+    nearbyBranchSlugs: ['dian'],
+    intro: "Makati has a high concentration of sneaker collectors, working professionals with premium footwear, and brand-conscious residents who understand that proper cleaning extends the life of shoes significantly. If you're looking for sneaker cleaning in Makati that goes beyond a basic wipe-down, WeClean's Dian Branch on Dian Street is where to go.",
+    sections: [
+      {
+        heading: 'What\'s Available at WeClean Dian',
+        paragraphs: [
+          "The Dian Branch is WeClean's flagship location and the only branch in the network with walk-in UltraSonic sneaker cleaning. The service uses ultrasonic technology to clean shoes at the microscopic level — it removes dirt from areas that manual brushing can't reach without abrasion.",
+          "The service covers most sneaker types: running shoes, lifestyle sneakers, canvas shoes, leather shoes, and high-top basketball shoes. Each pair is assessed before cleaning to determine the right approach for the specific materials.",
+        ],
+      },
+      {
+        heading: 'Why Makati Sneaker Owners Use Professional Cleaning',
+        paragraphs: [
+          "The cost of premium sneakers in the Philippines — Nike Dunk, New Balance 550, Adidas Samba, Jordan retros — makes proper maintenance worth investing in. A poorly cleaned pair can lose its colour, shape, or structural integrity. A pair that's maintained properly holds its condition and, in the case of limited-release shoes, its resale value.",
+          "Ultrasonic cleaning is particularly valuable for coloured midsoles, off-white toolings, and specialty materials that can't handle aggressive scrubbing. It also handles the kind of deep cleaning that occasional brush sessions can't achieve — especially for shoes worn frequently in Metro Manila's conditions.",
+        ],
+      },
+      {
+        heading: 'How to Book Sneaker Cleaning in Makati',
+        paragraphs: [
+          "Walk-in to the WeClean Dian Branch at 1737-C Niccan Building, Dian Street, Makati City during operating hours (Mon–Sat 8AM–8PM, Sun 9AM–6PM). Bring your shoes and we'll assess and quote you on the spot.",
+          "For pickup: message WeClean on WhatsApp with photos of the shoes and your address. We'll provide a quote, arrange pickup, and return your cleaned shoes. Free pickup and delivery is available across Makati and surrounding areas including BGC, Salcedo Village, San Lorenzo, and Poblacion.",
+        ],
+      },
+      {
+        heading: 'Pricing',
+        paragraphs: [
+          "UltraSonic sneaker cleaning is priced per pair based on condition and material. Message us on WhatsApp with photos for a quote before dropping off. There's no fixed rate because pairs vary significantly in the time and treatment they need.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Where can I get sneakers cleaned in Makati?', a: 'WeClean Dian Branch at 1737-C Niccan Building, Dian Street, Makati City. Walk-in or free pickup and delivery.' },
+      { q: 'How much does sneaker cleaning cost at WeClean?', a: 'Pricing is per pair based on condition and material. Send us photos on WhatsApp for a quote.' },
+      { q: 'Do you clean all types of sneakers?', a: 'Most types — running, lifestyle, canvas, leather, basketball. We assess each pair before cleaning to determine the right method.' },
+      { q: 'Can I get my sneakers picked up from BGC or Salcedo Village?', a: 'Yes — free pickup and delivery across Makati including BGC, Salcedo Village, San Lorenzo, and surrounding areas. Message us on WhatsApp.' },
+    ],
+  },
+  {
+    slug: 'how-to-care-for-leather-sneakers',
+    area: 'Philippines',
+    type: 'sneaker',
+    title: 'How to Care for Leather Sneakers and Keep Them Looking New',
+    metaDescription: 'Leather sneakers require different care than canvas or synthetic. Here\'s the right cleaning and conditioning routine to keep them in shape in the Philippine climate.',
+    nearbyBranchSlugs: ['dian'],
+    intro: "Leather sneakers — Air Force 1s, New Balance 550s, Sambas, loafers with rubber soles — need different care than canvas or synthetic uppers. Leather is a natural material that can crack, dry out, and lose its shape if not maintained properly. In the Philippines, where humidity is high and UV exposure is intense, that maintenance matters more than in temperate climates.",
+    sections: [
+      {
+        heading: 'What Damages Leather Sneakers',
+        paragraphs: [
+          "Water saturation: leather that gets thoroughly wet and is then dried quickly under direct heat (sunlight, dryer, radiator) will shrink, stiffen, and crack. Occasional rain exposure is fine — it's prolonged soaking followed by fast drying that causes structural damage.",
+          "Harsh cleaning products: acetone, bleach, and strong solvents strip the natural oils from leather, causing it to dry out and crack. Even some 'all-purpose' sneaker cleaners are too aggressive for quality leather.",
+          "UV exposure: direct sunlight fades leather and dries it out over time. If you're not wearing leather shoes, store them away from windows.",
+        ],
+      },
+      {
+        heading: 'The Right Cleaning Routine',
+        paragraphs: [
+          "Remove surface dust with a soft dry cloth or horsehair brush before applying any product. For regular maintenance, a small amount of mild soap (saddle soap, or even a gentle hand soap) diluted in water, applied with a soft cloth in circular motions, works well on most smooth leathers.",
+          "Wipe away soap with a clean damp cloth — remove all residue. Don't soak the leather; use just enough moisture to clean. Allow to dry naturally at room temperature, away from direct sunlight or heat sources.",
+        ],
+      },
+      {
+        heading: 'Conditioning: The Step Most People Skip',
+        paragraphs: [
+          "Leather needs conditioning after cleaning to replenish the natural oils that cleaning removes. A leather conditioner (shoe-specific products like Renovateur by Saphir, or widely available products like Leather Honey) applied after cleaning keeps leather supple, prevents cracking, and improves water resistance.",
+          "Apply a small amount with a soft cloth, work it in evenly, and buff off the excess with a clean cloth after 5–10 minutes. Condition every 1–2 months for frequently worn shoes, or any time the leather starts to look dull or stiff.",
+        ],
+      },
+      {
+        heading: 'Specific Considerations for the Philippines',
+        paragraphs: [
+          "High humidity means leather can develop mould if stored in enclosed spaces without ventilation. Store leather shoes in open shelving, shoe bags with breathable fabric (not plastic), or with silica gel packets inside the shoe.",
+          "Rain in the Philippines can be sudden and heavy. If leather sneakers get wet, stuff them with newspaper to absorb moisture and maintain shape, then dry naturally at room temperature for 24–48 hours before wearing again.",
+        ],
+      },
+      {
+        heading: 'When to Go Professional',
+        paragraphs: [
+          "Deep scuffs, significant staining, or leather that's already cracked or damaged benefits from professional treatment. WeClean's sneaker cleaning service at the Dian Branch in Makati handles leather sneakers with appropriate products and technique — message us with photos for an assessment.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'Can you use regular sneaker cleaner on leather shoes?', a: 'Some general sneaker cleaners are safe for leather; many are not. Check the label. The safest option is a dedicated leather cleaner, or mild soap and water.' },
+      { q: 'How do I stop leather sneakers from cracking?', a: 'Regular conditioning after cleaning is the main preventive. Cracking is caused by drying out — condition every 1–2 months and avoid direct heat drying when shoes get wet.' },
+      { q: 'Can WeClean clean leather sneakers?', a: 'Yes — WeClean handles leather sneakers at the Dian Branch. Send photos on WhatsApp for a quote and to confirm the right approach for your specific pair.' },
+      { q: 'How do I store leather sneakers in humid conditions?', a: 'Use breathable storage (fabric bags, open shelving). Avoid plastic boxes that trap moisture. Add silica gel packets inside the shoe and check regularly for early mould signs.' },
+    ],
+  },
+
+  // ─── NEW METRO MANILA AREAS ───────────────────────────────────────────────
+  {
+    slug: 'laundry-shops-near-bgc',
+    area: 'BGC',
+    type: 'guide',
+    title: "Laundry Shops Near BGC: A Guide for Bonifacio Global City Residents",
+    metaDescription: "Looking for a laundry service near BGC? WeClean serves Bonifacio Global City with free pickup and delivery from the Makati Dian Branch — including dry cleaning and sneaker care.",
+    nearbyBranchSlugs: ['dian'],
+    intro: "Bonifacio Global City is one of Metro Manila's most densely residential commercial districts — thousands of condo residents, expat households, and working professionals who need reliable laundry service without leaving their building or sacrificing garment quality. Here's what the laundry options near BGC look like and how to find one that actually delivers.",
+    sections: [
+      {
+        heading: "Laundry Options in and Around BGC",
+        paragraphs: [
+          "BGC has a mix of in-building laundry facilities, coin-operated laundromats, and full-service drop-off shops. In-building facilities are convenient but often underpowered for larger loads, comforters, or anything that needs more than a basic cycle. Coin-operated laundromats give you control but require your time and presence.",
+          "For residents who want clean clothes returned to their door without standing at a machine, pickup and delivery laundry services are the practical option. BGC's dense condo belt makes it one of the most efficient areas to serve — and WeClean covers it regularly.",
+        ],
+      },
+      {
+        heading: "WeClean's BGC Coverage",
+        paragraphs: [
+          "WeClean's nearest walk-in branch to BGC is the Dian Branch in Makati, on Dian Street off Chino Roces Avenue — approximately 10–15 minutes from BGC by car. For most BGC residents, the better option is free pickup and delivery: message WeClean on WhatsApp, confirm your address and preferred time, and clothes come back the next day.",
+          "BGC condo pickups are a regular part of WeClean's Makati operations. Include your unit number, tower, and building name in your WhatsApp message — we'll coordinate with building security or reception as needed.",
+        ],
+      },
+      {
+        heading: "Services Available for BGC Residents",
+        paragraphs: [
+          "Full-service wash, dry, and fold (₱165/load, max 5kg). Household items including comforters and bedding (₱170/load, max 4kg). Pickup and delivery: free. Dry cleaning via the Dian Branch — available via pickup. UltraSonic sneaker cleaning — available via pickup.",
+          "Dry cleaning and sneaker cleaning are services that most BGC-area laundromats don't offer in-house. WeClean's Dian Branch handles both, accessible without a personal trip via the pickup service.",
+        ],
+      },
+      {
+        heading: "How to Book",
+        paragraphs: [
+          "Message WeClean on WhatsApp with your BGC address, unit number, and preferred pickup date. We'll confirm the window and pick up from your door. No app, no account, no deposit.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Is there a WeClean branch in BGC?", a: "Not yet — but WeClean serves BGC with free pickup and delivery from the Makati Dian Branch. Most BGC residents book via WhatsApp and get same-address pickup." },
+      { q: "Does WeClean pick up from BGC condos?", a: "Yes, regularly. Include your unit number, tower, and building name in your WhatsApp booking. We coordinate with reception or security for buildings that require advance notice." },
+      { q: "Is dry cleaning available for BGC pickup customers?", a: "Yes, via the Dian Branch. Message us on WhatsApp for item-specific pricing and to arrange pickup." },
+      { q: "How long does laundry take for BGC pickup orders?", a: "Standard 24-hour turnaround. Rush same-day is available at 2× the rate — message us before 10AM to confirm." },
+    ],
+  },
+  {
+    slug: 'laundry-shops-near-ortigas',
+    area: 'Ortigas',
+    type: 'guide',
+    title: "Laundry Shops Near Ortigas: What to Know Before You Pick One",
+    metaDescription: "Looking for laundry near Ortigas? WeClean's Pasig branches cover Ortigas-area residents with free pickup, 24-hour turnaround, and individual order processing.",
+    nearbyBranchSlugs: ['sto-tomas', 'magsaysay'],
+    intro: "Ortigas Center and its surrounding residential barangays — Wack Wack, Kapitolyo, San Antonio, and Barangka — sit at the intersection of Pasig, Mandaluyong, and San Juan. It's a busy part of Metro Manila with high demand for laundry services, particularly from condo residents and working professionals in the CBD.",
+    sections: [
+      {
+        heading: "What Ortigas Residents Look For",
+        paragraphs: [
+          "The Ortigas corridor has a lot of laundry options, including coin-operated laundromats in commercial strips and drop-off shops serving condo buildings. For residents in Kapitolyo and Pioneer area, the challenge is finding a service that picks up, delivers, and actually returns clothes in the promised time — not a 48-hour stretch that becomes the norm.",
+          "Price per kilo is common in this area, but the same caution applies as anywhere: check whether loads are processed individually or batched.",
+        ],
+      },
+      {
+        heading: "WeClean's Coverage in the Ortigas Area",
+        paragraphs: [
+          "WeClean's two Pasig branches — Sto. Tomas (F. Manalo Street, Santo Tomas) and Magsaysay (Manggahan) — serve the Ortigas fringe and surrounding Pasig barangays. Kapitolyo, West Crame, and Pioneer-area addresses are covered by free pickup and delivery from the Sto. Tomas branch.",
+          "For Mandaluyong-side Ortigas (Barangka, Wack Wack), the Pandacan branch and the Makati Dian branch also cover pickups. Message us on WhatsApp with your address and we'll confirm which branch serves your zone.",
+        ],
+      },
+      {
+        heading: "Pricing and What's Included",
+        paragraphs: [
+          "Full-service wash, dry, and fold: ₱165 per load (max 5kg). Household items: ₱170 per load (max 4kg). Pickup and delivery: free. All orders individually processed, 24-hour standard turnaround.",
+          "For Ortigas-side condo residents needing dry cleaning, the Makati Dian Branch handles it via pickup — confirming on WhatsApp first for pricing by item.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Is there a WeClean branch near Ortigas?", a: "WeClean serves Ortigas-area residents via pickup and delivery from the Pasig branches (Sto. Tomas and Magsaysay). Message us your address to confirm coverage." },
+      { q: "Does WeClean cover Kapitolyo?", a: "Yes — Kapitolyo and surrounding Pasig barangays near Ortigas are within the pickup zone of the Sto. Tomas branch. Book via WhatsApp." },
+      { q: "How long does laundry take for Ortigas pickup orders?", a: "Standard 24-hour turnaround. Rush same-day at 2× the rate — message before 10AM to confirm." },
+      { q: "Which WeClean branch covers my Ortigas address?", a: "It depends on your exact barangay. Message us on WhatsApp with your address — we'll confirm which branch covers your zone." },
+    ],
+  },
+  {
+    slug: 'laundry-shops-near-paranaque',
+    area: 'Parañaque',
+    type: 'guide',
+    title: "Laundry Shops Near Parañaque: What to Know Before You Pick One",
+    metaDescription: "Looking for laundry service near Parañaque? WeClean serves BF Homes, Sucat, and surrounding Parañaque communities with free pickup and 24-hour turnaround.",
+    nearbyBranchSlugs: ['balagtas', 'harrison'],
+    intro: "Parañaque City — home to BF Homes, Sucat, Multinational Village, and the communities along the NLEX-SLEX southern stretch — is one of Metro Manila's larger residential cities. Finding reliable laundry pickup in the area is more difficult than in the city core: the options are fewer, turnaround times can be longer, and not all shops cover the full city.",
+    sections: [
+      {
+        heading: "What to Look For in Parañaque",
+        paragraphs: [
+          "Parañaque's residential areas vary from dense urban barangays near the airport to larger BF Homes-style subdivisions in the south. The laundry landscape reflects this: small neighborhood shops in the urban belt and limited options in the quieter residential areas.",
+          "For BF Homes and Sucat-area residents, pickup and delivery laundry is often the most practical solution — walk-in branches are farther and traffic in the area can make a trip time-consuming. Check whether a service actually covers your specific barangay before assuming it does.",
+        ],
+      },
+      {
+        heading: "WeClean's Parañaque Coverage",
+        paragraphs: [
+          "WeClean's Pasay branches — the Balagtas branch (Barangay 15) and the Harrison branch (F.B. Harrison Street) — are the nearest walk-in locations to northern Parañaque and the Baclaran border area. Free pickup and delivery extends coverage into Parañaque barangays close to the Pasay boundary.",
+          "For deeper Parañaque coverage (BF Homes, Sucat, Multinational Village), confirm your address on WhatsApp before booking — coverage in these areas depends on route scheduling. We'll let you know whether same-day confirmation or advance booking is needed.",
+        ],
+      },
+      {
+        heading: "Services and Pricing",
+        paragraphs: [
+          "Full-service wash, dry, and fold: ₱165 per load (max 5kg). Household items: ₱170 per load (max 4kg). Free pickup and delivery for covered zones. Standard 24-hour turnaround.",
+          "Dry cleaning is available via both Pasay branches — walk-in or via pickup. UltraSonic sneaker cleaning is available via pickup from the Makati Dian Branch for Parañaque customers.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Does WeClean deliver to Parañaque?", a: "Yes — northern Parañaque and Baclaran-border areas are covered. Deeper areas like BF Homes and Sucat may require confirmation. Message us your address on WhatsApp to check." },
+      { q: "What's the nearest WeClean branch to Parañaque?", a: "The Balagtas branch in Pasay (Barangay 15) and the Harrison branch (F.B. Harrison Street) are the closest walk-in locations. Both are near the Pasay–Parañaque border." },
+      { q: "How long does laundry take for Parañaque pickup?", a: "Standard 24-hour turnaround. Rush same-day available at 2× the rate — confirm early via WhatsApp." },
+      { q: "Is dry cleaning available in Parañaque?", a: "Yes — via pickup from the Pasay branches. Message us on WhatsApp for pricing and to arrange pickup." },
+    ],
+  },
+  {
+    slug: 'laundry-shops-near-las-pinas',
+    area: 'Las Piñas',
+    type: 'guide',
+    title: "Laundry Shops Near Las Piñas: What to Know Before You Pick One",
+    metaDescription: "Looking for laundry service near Las Piñas? WeClean serves communities near the Pasay–Parañaque corridor with free pickup and 24-hour turnaround.",
+    nearbyBranchSlugs: ['balagtas', 'harrison'],
+    intro: "Las Piñas is one of Metro Manila's southernmost cities — largely residential, with large subdivisions like BF Resort Village, Almanza, and Pamplona stretching toward Cavite. Reliable laundry service in Las Piñas is harder to find than in the more central cities, partly because the area is underserved by commercial laundry chains.",
+    sections: [
+      {
+        heading: "The Laundry Landscape in Las Piñas",
+        paragraphs: [
+          "Las Piñas has neighborhood laundry shops in commercial strips and barangay centers, but full-service pickup and delivery with consistent quality is less common here than in Makati or Pasig. Many shops serving Las Piñas operate as basic per-kilo walk-in services.",
+          "For residents with premium garments, large household items, or who need pickup rather than a walk-in trip, the options narrow quickly. Delivery coverage from Manila-based services varies — always confirm your specific address before assuming coverage.",
+        ],
+      },
+      {
+        heading: "WeClean's Southern Coverage",
+        paragraphs: [
+          "WeClean's Pasay branches serve communities closest to the Pasay–Parañaque–Las Piñas corridor. The Balagtas branch in Pasay is the nearest walk-in option, with pickup coverage extending south depending on route and distance.",
+          "For Las Piñas customers, we recommend messaging WeClean on WhatsApp with your specific address first — coverage varies by barangay and pickup scheduling. We'll confirm whether we can serve you and arrange a pickup window if available.",
+        ],
+      },
+      {
+        heading: "What's Available",
+        paragraphs: [
+          "Full-service wash, dry, and fold (₱165/load). Household items (₱170/load). Dry cleaning via the Pasay branches. Free pickup for covered zones. 24-hour standard turnaround.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Does WeClean deliver to Las Piñas?", a: "Coverage in Las Piñas depends on your specific barangay. Message us on WhatsApp with your address and we'll confirm whether pickup is available." },
+      { q: "What's the nearest WeClean to Las Piñas?", a: "The Balagtas branch in Pasay (Barangay 15) is the nearest walk-in location. Pickup coverage extends southward depending on zone." },
+      { q: "How do I book laundry pickup from Las Piñas?", a: "Message WeClean on WhatsApp with your address. We'll confirm coverage and arrange a pickup window if your zone is served." },
     ],
   },
 ];
