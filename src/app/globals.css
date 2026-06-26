@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
+@theme {
+  /* ── WeClean brand palette (exact from live site, June 2026) ────────────── */
+  /* Dark navy → electric blue → light cyan → near-white blue                 */
+
+  --color-brand-950: #020d17;
+  --color-brand-900: #061b2f;   /* dark header / hero / footer bg */
+  --color-brand-800: #0a2845;   /* hover on dark surfaces */
+  --color-brand-700: #003d8a;   /* dark CTA */
+  --color-brand-600: #0055c0;   /* links, secondary actions */
+  --color-brand-500: #0075ee;   /* primary — live site --primary */
+  --color-brand-400: #3ac6f5;   /* accent — live site --accent */
+  --color-brand-300: #7dd8f9;   /* lighter cyan */
+  --color-brand-200: #a3edff;   /* secondary — live site --secondary */
+  --color-brand-100: #ddf2fd;   /* muted — live site --muted */
+  --color-brand-50:  #f5fbff;   /* background tint — live site --background */
+
+  /* Neutral */
+  --color-background: #f5fbff;
+  --color-foreground: #061b2f;
+
+  /* Typography — live site uses Figtree */
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5fbff;
+  --foreground: #061b2f;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid #0075ee;
+  outline-offset: 2px;
+}
+
+/* Marquee animation for trust strip */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  display: inline-flex;
+  width: max-content;
+}
+
+details summary::-webkit-details-marker { display: none; }
